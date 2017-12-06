@@ -37,9 +37,9 @@ set :repo_url, "git@github.com:Yaxou/sf-try.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config$ cd ..
-deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try$ cd config/deploy/
-deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config/deploy$ cat production.rb
+#deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config$ cd ..
+#deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try$ cd config/deploy/
+#deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config/deploy$ cat production.rb
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -59,7 +59,7 @@ deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config/deploy$ cat production.rb
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
- role :app, %w{deploy@138.68.75.146}
+role :app, %w{deploy@138.68.75.146}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
@@ -75,7 +75,6 @@ deploy@ubuntu-1gb-fra1-cs:/var/www/sf-try/config/deploy$ cat production.rb
 
 
 set :deploy_to, "/var/www/#{fetch(:application)}"
-set :log_level, ENV['LOG_LEVEL']
 set :format, :pretty
 
 
